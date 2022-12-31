@@ -25,20 +25,6 @@ body {
   grid-column: 1 / 4;
 }
 
-.logo {
-  width: 40px;
-  height: 40px;
-}
-
-.boton-menu {
-  border: none;
-  background: none;
-}
-
-#boton-menu {
-  display: none;
-}
-
 .menu {
   display: inline-block;
   width: auto;
@@ -238,6 +224,10 @@ body {
     width: 350px;
   }
 
+  .logo-w {
+    width: 50px;
+  }
+
   .page-grid {
     display: flex;
     flex-direction: column;
@@ -246,12 +236,88 @@ body {
     height: 100%;
   }
 
+  .boton {
+    background-image: url(assets/images/icon-menu.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+  }
+
+  .boton.switch {
+    background-image: url(assets/images/icon-menu-close.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hsl(36, 100%, 99%);
+    position: fixed;
+    transform: translateX(100%);
+    transition: 0.2s linear;
+    right: 0;
+    top: 0px;
+    width: 250px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu.menu-switch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hsl(36, 100%, 99%);
+    position: fixed;
+    transform: translateX(0);
+    transition: 0.2s linear;
+    right: 0;
+    top: 0px;
+    width: 250px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
   .menu li a {
-    margin-left: 30px;
+    display: inline;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    color: hsl(240, 100%, 5%);
+  }
+
+  .menu.menu-switch li a {
+    display: inline;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    color: hsl(240, 100%, 5%);
   }
 
   .menu li {
-    margin-bottom: 10px;
+    display: inline;
+    margin-left: 30px;
+    margin-bottom: 20px;
+  }
+
+  .menu.menu-switch li {
+    display: inline;
+    margin-left: 30px;
+    margin-bottom: 20px;
   }
 
   .cabezazo {
@@ -287,10 +353,4 @@ body {
   .seccion-2 a {
     margin-top: 30px;
   }
-
-  .boton-menu {
-    position: absolute;
-    right: 20px;
-  }
-
 }
